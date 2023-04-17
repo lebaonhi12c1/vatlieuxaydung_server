@@ -12,8 +12,14 @@ const saleSchema = new mongoose.Schema({
         ref: 'Order'
     }
     ,
-    quantity: Number,
-    price: Number,
+    quantity: {
+        type :Number,
+        default: 0
+    },
+    price: {
+        type :Number,
+        default: 0
+    },
 },{timestamps: true})
 
 

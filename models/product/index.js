@@ -1,13 +1,22 @@
 import mongoose, { Schema } from "mongoose";
 
 const productSchem = new Schema({
-    name: String,
-    typeproduct: {
+    name: {
+        type :String,
+        default: ''
+    },
+    categoryid: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category'
     },
-    quantity: Number,
-    price:Number,
+    quantity: {
+        type: Number,
+        default: 0
+    },
+    price:{
+        type: Number,
+        default: 0
+    },
     unit: String,
     producerid: {
         type: mongoose.Schema.Types.ObjectId,

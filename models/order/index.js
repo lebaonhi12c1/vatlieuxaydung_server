@@ -9,12 +9,23 @@ const orderSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Employee'
     },
-    sumary: Number,
-    vat: Number,
-    debt: Number,
+    sumary: {
+        type :Number,
+        default: 0
+    },
+    vat: {
+        type :Number,
+        default: 0
+    },
+    debt: {
+        type :Number,
+        default: 0
+    },
     status: {
         type: String,
         enum: ['pending', 'confirmed', 'delivered', 'canceled'],
         default: 'pending'
     }
 },{timestamps: true})
+
+export default mongoose.model.Order || mongoose.model('Order',orderSchema)
