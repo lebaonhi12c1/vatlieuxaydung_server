@@ -14,7 +14,7 @@ const productController = {
                     categoryid: product_category
                 })
                 await user.save()
-                res.status(200).json(useRespone(true,'Create success!',user))
+               return  res.status(200).json(useRespone(true,'Create success!',user))
             }
             res.status(400).json(useRespone(false,'Not found Producer or Category!',))
         } catch (error) {
@@ -31,7 +31,7 @@ const productController = {
                     producerid: product_producer,
                     categoryid: product_category
                 },{new: true})
-                res.status(200).json(useRespone(true,'Update success!',user))
+               return  res.status(200).json(useRespone(true,'Update success!',user))
             }
             res.status(400).json(useRespone(false,'Not found Producer or Category!',))
           } catch (error) {

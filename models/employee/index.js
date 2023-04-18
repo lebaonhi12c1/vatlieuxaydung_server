@@ -23,6 +23,10 @@ const employeeSchema = new mongoose.Schema({
         type: String,
         enum: ['Basic','Manager'],
         default: 'Basic'
+    },
+    image: {
+        type: String,
+        default: 'https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1681800321~exp=1681800921~hmac=92c513f04fc03bd4a4f02a4e5f6d630f7f7a2c38e05febf2021523582ad2a104'
     }
 },{timestamps:true})
 
