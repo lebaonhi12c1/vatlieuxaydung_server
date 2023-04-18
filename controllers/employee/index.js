@@ -1,4 +1,4 @@
-import Employee from '../../models/Employee/index.js'
+import Employee from '../../models/employee/index.js'
 import {useRespone} from '../../hooks/index.js'
 const EmployeeController = {
     create: async(req,res)=>{

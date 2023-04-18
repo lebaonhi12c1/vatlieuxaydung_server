@@ -1,4 +1,4 @@
-import Product from '../../models/Product/index.js'
+import Product from '../../models/product/index.js'
 import {useRespone} from '../../hooks/index.js'
 import Producer from '../../models/producer/index.js'
 import Category from '../../models/category/index.js'
