@@ -4,6 +4,7 @@ const router = Router()
 
 router.get('/',employeeController.getall)
 router.post('/create',employeeController.create)
+router.post('/login',employeeController.login)
 router.put('/update',employeeController.update)
 router.delete('/delete/:id',employeeController.delete)
 

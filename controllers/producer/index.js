@@ -2,6 +2,7 @@ import Producer from '../../models/producer/index.js'
 import {useRespone} from '../../hooks/index.js'
 const producerController = {
     create: async(req,res)=>{
+        console.log(req.body)
         try {
             const user = await new Producer(req.body)
             await user.save()

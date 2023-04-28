@@ -48,7 +48,7 @@ const productController = {
     },
     getall: async(req,res)=>{
         try {
-            const users = await Product.find()
+            const users = await Product.find().populate(['categoryid','producerid'])
             res.status(200).json(users)
         } catch (error) {
             res.status(500).json(error)

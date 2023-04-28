@@ -36,5 +36,20 @@ const EmployeeController = {
             res.status(500).json(error)
         }
     },
+    login: async(req,res)=>{
+        try {
+            const employee = await Employee.findOne({username: req.body.username})
+            console.log(employee)
+            if(!employee){
+                return res.status(404).json(useRespone(false,'User not found!',null))
+            }
+            if(employee.password!== req.body.password){
+                return res.status(404).json(useRespone(false,'Wrong password!',null))
+            }
+            res.status(200).json(useRespone(true,'Login success!',employee))
+        } catch (error) {
+            res.status(500).json(useRespone(false,error,null))
+        }
+    }
 }
 export default EmployeeController
