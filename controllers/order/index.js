@@ -10,7 +10,7 @@ const orderController = {
             var products = []
             for (let index = 0; index < req.body.productid.length; index++) {
                 const element = await Product.findOne({_id: req.body.productid[index]})
-                products.push(element)
+                products.push({...element,quantity: req.body.productid[index].quantity})
             }
             if(order_customer && products.length === req.body.productid.length){
                 const user = await new Order({
@@ -27,7 +27,6 @@ const orderController = {
         }
     },
     update: async(req,res)=>{
-        console.log(req.body)
         try {
             const product_producer = await Employee.findOne({_id: req.body.employeeid})
             const product_category = await User.findOne({_id: req.body.customerid})
