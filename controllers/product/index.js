@@ -54,5 +54,13 @@ const productController = {
             res.status(500).json(error)
         }
     },
+    getproduct: async(req,res)=>{
+        try {
+            const users = await Product.findOne({_id:req.params.id}).populate(['categoryid','producerid'])
+            res.status(200).json(users)
+        } catch (error) {
+            res.status(500).json(error)
+        }
+    },
 }
 export default productController

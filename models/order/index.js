@@ -21,15 +21,13 @@ const orderSchema = mongoose.Schema({
         type :Number,
         default: 0
     },
-    productid:[
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Product'
-        },
-    ],
+    receiver: {},
+    deliveryBill: [],
+    receipts: [],
+    productid:[],
     status: {
         type: String,
-        enum: ['pending', 'confirmed', 'delivered', 'canceled'],
+        enum: ['pending', 'delivering', 'completed', 'canceled'],
         default: 'pending'
     }
 },{timestamps: true})
